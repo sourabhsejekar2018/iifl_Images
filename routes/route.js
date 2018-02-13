@@ -8,7 +8,7 @@ exports.home=function(req,res){
   exports.company=function(req,res){
       var companyName=req.params.company;
       var title,heading;
-      var imageCount=4;
+      var imageArray=[1,2,3,4];
   
       if(companyName==='news'){
          title="News";
@@ -16,14 +16,14 @@ exports.home=function(req,res){
       }
       else if(companyName==='chess'){
          title="Chess";
-         heading="Chess: We can incress knowlage and new idea";
+         heading="Chess: We can incress knowledge and new idea";
       }
       else if(companyName==='cricket'){
          title="Cricket";
          heading="Cricket: play cricket you need to be fit and strong, and have good hand-eye coordination and ball-handling skills";
       }
-      else if(companyName==='carom'){
-         title="Carom";
+      else if(companyName==='carrom'){
+         title="Carrom";
          heading="Board games play a very important role in health and brain development";
       }
       else if(companyName==='boss'){
@@ -36,6 +36,6 @@ exports.home=function(req,res){
           title:title,
           headline:heading,
           company:companyName,
-          numberOfImages:imageCount});
+          imageArray:imageArray});
     }
   

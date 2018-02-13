@@ -1,13 +1,15 @@
 var express=require('express');
-var app=express();
-
+var exphbs =require('express-handlebars');
 var routes=require('./routes/route.js');
-app.set('view engine','ejs');
+
+var app=express();
 
 app.use(express.static(__dirname+'/public'));
 
-app.get('/',routes.home);
+app.set('view engine','handlebars');
+app.engine('handlebars',exphbs({defaultLayout:'main'}));
 
+app.get('/',routes.home);
 app.get('/:company',routes.company);
 
 
